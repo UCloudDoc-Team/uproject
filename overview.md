@@ -22,7 +22,7 @@
 **资源：**
 资源是云产品的实例，如一台云主机，ufile的bucket等。每个UCloud资源都归属于云账户下的某个项目，您可以这样描述一个UCloud资源：
 
-<project_id>:<region>:<resource_id>
+/<project_id/>:/<region/>:/<resource_id/>
 
 因此当您通过API或console对一个资源进行操作时，需要先指定该资源所在的项目与数据中心，如不指定，系统会使用"默认项目"。
 
