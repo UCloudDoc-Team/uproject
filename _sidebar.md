@@ -1,4 +1,3 @@
-<div class="sidebar_title"> 账号与权限管理 UAM</div>
 
 * [概览](/uproject/README)
 * [概要](/uproject/survey)
