@@ -3,7 +3,7 @@
 * [概要](/uproject/survey)
 * [快速入门](/uproject/quickstart)
 * [项目管理](/uproject/projects)
-* [人员管理](/uproject/user)
+* [用户管理](/uproject/user)
 * [用户组管理](/uproject/group)
 * 授信管理
     * [跨UCloud账号访问](/uproject/access_management/cross_account_access)
