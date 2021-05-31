@@ -28,7 +28,7 @@
 
 ### 子用户加入用户组
 
-子用户加入用户组后，自动获取组的资源权限。允许加入多个用户组。
+子用户加入用户组后，自动获取组的资源权限。子用户可以加入多个用户组。
 ![](/images/user/user_join_group.png)
 ![](/images/user/user_pick_a_group.png)
 
@@ -39,5 +39,5 @@
 ![](/images/user/user_freezing_delete.png)
 
 ### 查看子用户详情
-
+通过详情页管理子用户的具体权限和组信息。注意子用户不可以管理其所在组的资源权限。
 ![](/images/user/user_more_info.png)
