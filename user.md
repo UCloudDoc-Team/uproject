@@ -28,6 +28,8 @@
 ### 子用户加入用户组
 
 ![](/images/user/user_join_group.png)
+![](/images/user/user_pick_a_group.png)
+
 
 ### 冻结/解冻/注销子用户
 
