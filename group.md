@@ -34,4 +34,6 @@
 ![](/images/group/group_delete.png)
 
 ### 查看用户组详情
+
+详情页展示了该用户组的具体权限和成员信息。
 ![](/images/group/group_more_info.png)
