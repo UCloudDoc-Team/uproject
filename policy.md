@@ -6,11 +6,11 @@
 
 - V (version) 语法版本，由UCloud维护。当前版本V1，不可修改。
 
-- E (effect) 执行效力，All or Deny。
+- E (effect) 执行效力，Allow or Deny。
 
 - A (action) API名称，支持一个或多个。
 
-- R (resource) 资源，用urn表示。语法结构
+- R (resource) 资源，用urn表示。
 
 - C (condition) 定义该条策略的生效前提。e.g. 时间、IP。
 
