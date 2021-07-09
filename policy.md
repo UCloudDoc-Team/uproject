@@ -21,15 +21,15 @@ UCloud提供两种模式的权限策略：
 
 ### 查看系统策略
 系统策略是一组按操作类型打包的权限。点击“详情”可以查看策略包含的API以及引用情况。
-![](/images/user/policy_mainpage.png)
-![](/images/user/policy_view_more.png)
+![](/images/policy/policy_mainpage.png)
+![](/images/policy/policy_view_more.png)
 
 ### 创建自定义策略
 自定义策略可以指定 允许/拒绝 操作具体的API。例如，不允许子用户新建云主机。
-![](/images/user/policy_create_new.png)
-![](/images/user/policy_create_new_API.png)
-![](/images/user/policy_create_done.png)
-![](/images/user/policy_view_customized_policy.png)
+![](/images/policy/policy_create_new.png)
+![](/images/policy/policy_create_new_API.png)
+![](/images/policy/policy_create_done.png)
+![](/images/policy/policy_view_customized_policy.png)
 
 ### 为子用户授权
-![](/images/user/policy_attach_customized_policy.png)
+![](/images/policy/policy_attach_customized_policy.png)
