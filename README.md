@@ -1,6 +1,5 @@
 # 概览
 
-* [概览](/uproject/README)
 * [用户管理](/uproject/user)
 * [用户组管理](/uproject/group)
 * [策略管理](/uproject/policy)
