@@ -1,11 +1,11 @@
 # 概览
 
-* [概要](/uproject/survey.md)
-* [快速入门](/uproject/quickstart)
+* [概览](/uproject/README)
+* [用户管理](/uproject/user)
+* [用户组管理](/uproject/group)
+* [策略管理](/uproject/policy)
 * [项目管理](/uproject/projects)
-* [人员管理](/uproject/user)
-* [角色管理](/uproject/role)
 * 授信管理
-    * [提供跨UCloud账号的访问权限](/uproject/access_management/cross_account_access)
+    * [跨UCloud账号访问](/uproject/access_management/cross_account_access)
+* [最佳实践](/uproject/bestcase)
 * [常见问题](/uproject/hotquestion)
-* [成功实践和典型案例](/uproject/bestcase)
