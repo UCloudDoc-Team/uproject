@@ -7,4 +7,8 @@
 ### 为角色授权
 
 ### 使用角色
+通过调用API扮演RAM角色
+有权限的IAM用户可以使用其访问密钥调用AssumeRole API，以获取某个IAM角色的安全令牌（STS Token），从而使用安全令牌访问UCloud。
+
+
 
