@@ -13,5 +13,17 @@ IAM角色是一种虚拟用户，可以被授予一组权限策略。与IAM子�
 #### 扮演角色
 扮演角色是实体用户获取角色身份的安全令牌的方法。一个实体用户调用STS API AssumeRole - 获取扮演角色的临时身份凭证可以获得角色的安全令牌，使用安全令牌可以访问云服务API。
 
+### 功能特性
+#### 使用IAM用户扮演角色时获取STS Token
+有权限的IAM用户可以使用自己的访问密钥调用AssumeRole - 获取扮演角色的临时身份凭证接口，以获取某个IAM角色的STS Token，从而使用STS Token访问UCloud云资源。
 
+通常用于跨账号访问场景和临时授权场景。
+
+#### 角色SSO时获取STS Token
+进行角色SSO时，通过调用AssumeRoleWithSAML - SAML角色SSO时获取扮演角色的临时身份凭证，以获取某个IAM角色的STS Token，从而使用STS Token进行单点登录（SSO登录）。
+
+### 产品优势
+使用STS Token，减少长期访问密钥（Accesskey）泄露的风险。
+STS Token具有时效性，可以自定义有效期，到期后将自动失效，无需定期轮换。
+可以为STS Token绑定自定义权限策略，提供更加灵活和精细的云资源授权。
 
