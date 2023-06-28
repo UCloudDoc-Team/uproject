@@ -16,12 +16,13 @@
 ### UCloud SP的SAML配置
 ####  操作步骤
 打开访问控制——SSO管理，此功能默认为关闭，此时UCloud用户可以使用密码登录，所有SSO设置不生效。
-![image](https://github.com/UCloudDoc-Team/uproject/assets/107971405/287d59f8-1635-4808-a127-67c106d2b95f)
-* 如果选择开启此功能，此时子用户密码登录方式将会被关闭，统一跳转到企业IdP登录服务进行身份认证。如果再次关闭，用户密码登录方式自动恢复。
-* 元数据文档：单击上传文件，上传企业IdP提供的元数据文档。
-* 说明 元数据文档由企业IdP提供，一般为XML格式，包含IdP的登录服务地址以及X.509公钥证书（用于验证IdP所颁发的SAML断言的有效性）。
-* 单击开启，上传元数据文件。
-![image](https://github.com/UCloudDoc-Team/uproject/assets/107971405/c12752c7-7a78-43bf-9de7-91a768271af6) 
+![image](https://github.com/UCloudDoc-Team/uproject/assets/107971405/287d59f8-1635-4808-a127-67c106d2b95f)  
+
+如果选择开启此功能，此时子用户密码登录方式将会被关闭，统一跳转到企业IdP登录服务进行身份认证。如果再次关闭，用户密码登录方式自动恢复。  
+元数据文档：单击上传文件，上传企业IdP提供的元数据文档。  
+说明：元数据文档由企业IdP提供，一般为XML格式，包含IdP的登录服务地址以及X.509公钥证书（用于验证IdP所颁发的SAML断言的有效性）。
+单击开启，上传元数据文件。
+![image](https://github.com/UCloudDoc-Team/uproject/assets/107971405/c12752c7-7a78-43bf-9de7-91a768271af6)   
 说明：该功能只对UCloud账号下的所有IAM子用户生效，不会影响UCloud主账号的登录。
 
 ####  后续步骤
@@ -31,8 +32,8 @@
 <img width="1152" alt="image" src="https://github.com/UCloudDoc-Team/uproject/assets/107971405/2f68a555-2816-42a6-81a2-f2b2f7d5649c">
 
 ##### 企业IdP的SAML配置
-从UCloud获取SAML服务提供商元数据URL。
-<img width="590" alt="image" src="https://github.com/UCloudDoc-Team/uproject/assets/107971405/cb318d78-5279-4b09-a599-5166219751e6">
+从UCloud获取SAML服务提供商元数据URL。  
+<img width="590" alt="image" src="https://github.com/UCloudDoc-Team/uproject/assets/107971405/cb318d78-5279-4b09-a599-5166219751e6">  
 在企业IdP中创建一个SAML SP，并根据实际情况选择下面任意一种方式配置UCloud 为信赖方。
 直接使用步骤1所述的UCloud元数据URL进行配置。
 如果您的IdP不支持URL配置，您可以通过步骤1所述URL下载元数据文件并上传至您的IdP。
