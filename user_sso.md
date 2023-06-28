@@ -24,16 +24,15 @@
 说明：该功能只对UCloud账号下的所有IAM子用户生效，不会影响UCloud主账号的登录。
 
 ####  后续步骤
-完成SAML配置后，创建与企业IdP相匹配的IAM用户，用户管理-邀请子用户
+完成SAML配置后，创建与企业IdP相匹配的IAM用户，用户管理-邀请子用户，填写用户名，无需邮箱，系统会为该子用户生成虚拟邮箱，邀请成功后即激活状态。
 <img width="882" alt="image" src="https://github.com/UCloudDoc-Team/uproject/assets/107971405/73191284-5c07-473c-8d8c-004eab740d19">
-填写用户名，无需邮箱，系统会为该子用户生成虚拟邮箱，邀请成功后即激活状态。注：关闭SSO功能后，需要将开启SSO功能期间创建的子用户开启控制台访问能力。便于关闭SSO功能后子账号可以使用账号邮箱登录等功能。
+注：关闭SSO功能后，需要将开启SSO功能期间创建的子用户开启控制台访问能力。便于关闭SSO功能后子账号可以使用账号邮箱登录等功能。
 <img width="1152" alt="image" src="https://github.com/UCloudDoc-Team/uproject/assets/107971405/2f68a555-2816-42a6-81a2-f2b2f7d5649c">
 
 ##### 企业IdP的SAML配置
 从UCloud获取SAML服务提供商元数据URL。
 <img width="590" alt="image" src="https://github.com/UCloudDoc-Team/uproject/assets/107971405/cb318d78-5279-4b09-a599-5166219751e6">
-
-###### 在企业IdP中创建一个SAML SP，并根据实际情况选择下面任意一种方式配置UCloud 为信赖方。
+在企业IdP中创建一个SAML SP，并根据实际情况选择下面任意一种方式配置UCloud 为信赖方。
 直接使用步骤1所述的UCloud元数据URL进行配置。
 如果您的IdP不支持URL配置，您可以通过步骤1所述URL下载元数据文件并上传至您的IdP。
 如果您的IdP不支持元数据文件上传，则需要手动配置以下参数：
