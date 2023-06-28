@@ -33,13 +33,10 @@
 ###### 从UCloud获取SAML服务提供商元数据URL。
 <img width="590" alt="image" src="https://github.com/UCloudDoc-Team/uproject/assets/107971405/cb318d78-5279-4b09-a599-5166219751e6">
 
-
 ###### 在企业IdP中创建一个SAML SP，并根据实际情况选择下面任意一种方式配置UCloud 为信赖方。
 直接使用步骤1所述的UCloud元数据URL进行配置。
 如果您的IdP不支持URL配置，您可以通过步骤1所述URL下载元数据文件并上传至您的IdP。
 如果您的IdP不支持元数据文件上传，则需要手动配置以下参数：
 * Entity ID：下载的元数据XML中，md:EntityDescriptor元素的entityID属性值。
 * ACS URL：下载的元数据XML中，md:AssertionConsumerService元素的Location属性值。
-
-
 
