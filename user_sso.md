@@ -30,7 +30,7 @@
 <img width="1152" alt="image" src="https://github.com/UCloudDoc-Team/uproject/assets/107971405/2f68a555-2816-42a6-81a2-f2b2f7d5649c">
 
 ##### 企业IdP的SAML配置
-###### 从UCloud获取SAML服务提供商元数据URL。
+从UCloud获取SAML服务提供商元数据URL。
 <img width="590" alt="image" src="https://github.com/UCloudDoc-Team/uproject/assets/107971405/cb318d78-5279-4b09-a599-5166219751e6">
 
 ###### 在企业IdP中创建一个SAML SP，并根据实际情况选择下面任意一种方式配置UCloud 为信赖方。
