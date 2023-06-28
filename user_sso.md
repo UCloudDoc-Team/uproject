@@ -26,6 +26,9 @@
 ####  后续步骤
 完成SAML配置后，创建与企业IdP相匹配的IAM用户，用户管理-邀请子用户
 <img width="882" alt="image" src="https://github.com/UCloudDoc-Team/uproject/assets/107971405/73191284-5c07-473c-8d8c-004eab740d19">
+填写用户名，无需邮箱，系统会为该子用户生成虚拟邮箱，邀请成功后即激活状态。注：关闭SSO功能后，需要将开启SSO功能期间创建的子用户开启控制台访问能力。便于关闭SSO功能后子账号可以使用账号邮箱登录等功能。
+<img width="1152" alt="image" src="https://github.com/UCloudDoc-Team/uproject/assets/107971405/2f68a555-2816-42a6-81a2-f2b2f7d5649c">
+
 ##### 企业IdP的SAML配置
 ###### 从UCloud获取SAML服务提供商元数据URL。
 <img width="590" alt="image" src="https://github.com/UCloudDoc-Team/uproject/assets/107971405/cb318d78-5279-4b09-a599-5166219751e6">
