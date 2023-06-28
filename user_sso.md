@@ -24,13 +24,14 @@
 说明：该功能只对UCloud账号下的所有IAM子用户生效，不会影响UCloud主账号的登录。
 
 ####  后续步骤
-完成SAML配置后，选择以下一种方法创建与企业IdP相匹配的IAM用户：
-### 企业IdP的SAML配置
-#### 从UCloud获取SAML服务提供商元数据URL。
+完成SAML配置后，创建与企业IdP相匹配的IAM用户，用户管理-邀请子用户
+<img width="882" alt="image" src="https://github.com/UCloudDoc-Team/uproject/assets/107971405/73191284-5c07-473c-8d8c-004eab740d19">
 
-<img width="584" alt="image" src="https://github.com/UCloudDoc-Team/uproject/assets/107971405/38bccf7c-14de-409a-b0c4-ddd225250a8a">
+##### 企业IdP的SAML配置
+###### 从UCloud获取SAML服务提供商元数据URL。
+<img width="590" alt="image" src="https://github.com/UCloudDoc-Team/uproject/assets/107971405/cb318d78-5279-4b09-a599-5166219751e6">
 
-#### 在企业IdP中创建一个SAML SP，并根据实际情况选择下面任意一种方式配置UCloud 为信赖方。
+##### 在企业IdP中创建一个SAML SP，并根据实际情况选择下面任意一种方式配置UCloud 为信赖方。
 直接使用步骤1所述的UCloud元数据URL进行配置。
 如果您的IdP不支持URL配置，您可以通过步骤1所述URL下载元数据文件并上传至您的IdP。
 如果您的IdP不支持元数据文件上传，则需要手动配置以下参数：
