@@ -15,12 +15,14 @@
 ### UCloud SP的SAML配置
 ####  操作步骤
 打开访问控制——SSO管理，此功能默认为关闭，此时UCloud用户可以使用密码登录，所有SSO设置不生效。
-![image](https://github.com/UCloudDoc-Team/uproject/assets/107971405/287d59f8-1635-4808-a127-67c106d2b95f)  
+![image](https://github.com/UCloudDoc-Team/uproject/assets/107971405/b8aa3fb3-dc2d-493c-be97-fe92d1b3870d)
+
 如果选择开启此功能，此时子用户密码登录方式将会被关闭，统一跳转到企业IdP登录服务进行身份认证。如果再次关闭，用户密码登录方式自动恢复。  
 元数据文档：单击上传文件，上传企业IdP提供的元数据文档。  
-说明：元数据文档由企业IdP提供，一般为XML格式，包含IdP的登录服务地址以及X.509公钥证书（用于验证IdP所颁发的SAML断言的有效性）。
+说明：元数据文档由企业IdP提供，一般为XML格式，包含IdP的登录服务地址以及X.509公钥证书（用于验证IdP所颁发的SAML断言的有效性）。  
 单击开启，上传元数据文件。  
-![image](https://github.com/UCloudDoc-Team/uproject/assets/107971405/c12752c7-7a78-43bf-9de7-91a768271af6)   
+![image](https://github.com/UCloudDoc-Team/uproject/assets/107971405/85a0c150-bf44-4729-b0f2-36c8203c0e60)
+
 说明：该功能只对UCloud账号下的所有IAM子用户生效，不会影响UCloud主账号的登录。
 
 ####  后续步骤
@@ -38,4 +40,70 @@
 如果您的IdP不支持元数据文件上传，则需要手动配置以下参数：
 * Entity ID：下载的元数据XML中，md:EntityDescriptor元素的entityID属性值。
 * ACS URL：下载的元数据XML中，md:AssertionConsumerService元素的Location属性值。
+
+### 用户SSO的SAML响应
+在基于SAML 2.0的SSO流程中，当企业用户在IdP登录后，IdP将根据SAML 2.0 HTTP-POST绑定的要求生成包含SAML断言的认证响应，并由浏览器（或程序）自动转发给UCloud。这个SAML断言会被用来确认用户登录状态并从中解析出登录的主体。因此，断言中必须包含UCloud要求的元素，否则登录用户的身份将无法被确认，导致SSO失败。
+
+#### SAML响应
+请确保您的IdP向UCloud发出符合如下要求的SAML响应，每一个元素都必须要有，否则SSO将会失败。
+```<saml2p:Response>
+    <saml2:Issuer>...</saml2:Issuer>
+    <saml2p:Status>
+        ...
+    </saml2p:Status>
+    <saml2:Assertion>
+        <saml2:Issuer>...</saml2:Issuer>
+        <ds:Signature>
+            ...
+        </ds:Signature>
+        <saml2:Subject>
+            <saml2:NameID>${NameID}</saml2:NameID>
+            <saml2:SubjectConfirmation>
+                ...
+            </saml2:SubjectConfirmation>
+        </saml2:Subject>
+        <saml2:Conditions>
+            <saml2:AudienceRestriction>
+                <saml2:Audience>${Audience}</saml2:Audience>
+            </saml2:AudienceRestriction>
+        </saml2:Conditions>
+        <saml2:AuthnStatement>
+            ...
+        </saml2:AuthnStatement>
+    </saml2:Assertion>
+</saml2p:Response> 
+ ```
+#### SAML断言中的元素说明
+* SAML 2.0协议的通用元素
+|  元素   | 说明  |
+|  ----  | ----  |
+| Issuer  | Issuer的值必须与您在UCloud用户SSO设置中上传的元数据文件中的EntityID匹配。 |
+| Signature  | UCloud要求SAML断言必须被签名以确保没有篡改，Signature及其包含的元素必须包含签名值、签名算法等信息。 |
+|  Subject  | Subject必须包含以下元素：有且仅有一个NameID元素，是UCloud账号下的某个IAM子用户用户的身份标识。详情请参见本文下面所述的NameID元素和NameID示例。有且仅有一个SubjectConfirmation元素，其中包含一个SubjectConfirmationData元素。SubjectConfirmationData必须有以下两个属性：NotOnOrAfter：规定SAML断言的有效期。Recipient：UCloud通过检查该元素的值来确保UCloud是该断言的目标接收方，其取值必须为https://signin.aliyun.com/saml/SSO  。
+| Conditions  | 在Conditions元素中，必须包含一个AudienceRestriction元素，其中可包含一至多个Audience元素，但必须有一个Audience元素的取值为 https://signin.aliyun.com/${accountId}/saml/SSO ，${accountId}为UCloud账号ID。 |
+
+以下是一个Subject元素的示例：
+```<Subject>
+  <NameID Format="urn:oasis:names:tc:SAML:2.0:nameid-format:persistent">Alice@example.onaliyun.com</NameID>        
+  <SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">   
+    <SubjectConfirmationData NotOnOrAfter="2019-01-01T00:01:00.000Z" Recipient="https://signin.aliyun.com/saml/SSO"/>    
+  </SubjectConfirmation>
+</Subject>|
+```
+
+以下是一个Conditions元素的示例：
+```<Conditions>
+  <AudienceRestriction>
+    <Audience>https://signin.aliyun.com/${accountId}/saml/SSO</Audience>
+  </AudienceRestriction>
+</Conditions>
+```
+
+* NameID元素
+UCloud需要通过UPN（User Principal Name）来定位一个IAM子用户用户，所以要求企业IdP生成的SAML断言包含用户的UPN。UCloud通过解析SAML断言中的NameID元素，来匹配IAM子用户用户的UPN从而实现用户SSO。
+
+因此，在配置IdP颁发的SAML断言时，需要将对应于IAM子用户用户UPN的字段映射为SAML断言中的NameID元素。
+
+IAM子用户用户名为Alice，默认域名为example.onaliyun.com。
+
 
