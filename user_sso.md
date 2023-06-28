@@ -26,7 +26,6 @@
 ####  后续步骤
 完成SAML配置后，创建与企业IdP相匹配的IAM用户，用户管理-邀请子用户
 <img width="882" alt="image" src="https://github.com/UCloudDoc-Team/uproject/assets/107971405/73191284-5c07-473c-8d8c-004eab740d19">
-
 ##### 企业IdP的SAML配置
 ###### 从UCloud获取SAML服务提供商元数据URL。
 <img width="590" alt="image" src="https://github.com/UCloudDoc-Team/uproject/assets/107971405/cb318d78-5279-4b09-a599-5166219751e6">
