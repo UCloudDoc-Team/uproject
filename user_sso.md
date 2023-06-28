@@ -5,7 +5,7 @@
 * 身份提供商（IdP）：一个包含有关外部身份提供商元数据的IAM实体，身份提供商可以提供身份管理服务。
 * 企业本地IdP：Microsoft Active Directory Federation Service （AD FS）、Shibboleth等。
 * Cloud IdP：UCloud 应用身份服务、Azure AD、Google Workspace、Okta、OneLogin等。
-* 服务提供商（SP）：利用IdP的身份管理功能，为用户提供具体服务的应用，SP会使用IdP提供的用户信息。一些非SAML协议的身份系统（例如：OpenID Connect），也把服务提供商称作IdP的信赖方。
+* 服务提供商（SP）：利用IdP的身份管理功能，为用户提供具体服务的应用，SP会使用IdP提供的用户信息。
 * 安全断言标记语言（SAML 2.0）：实现企业级用户身份认证的标准协议，它是SP和IdP之间实现沟通的技术实现方式之一。SAML 2.0已经是目前实现企业级SSO的一种事实标准。
 * SAML断言（SAML assertion）：SAML协议中用来描述认证请求和认证响应的核心元素。例如：用户的具体属性就包含在认证响应的断言里。
 * 信赖（Trust）：建立在SP和IdP之间的互信机制，通常由公钥和私钥来实现。SP通过可信的方式获取IdP的SAML元数据，元数据中包含IdP签发SAML断言的签名验证公钥，SP则使用公钥来验证断言的完整性。
