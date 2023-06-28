@@ -39,6 +39,6 @@
 如果您的IdP不支持元数据文件上传，则需要手动配置以下参数：
 * Entity ID：下载的元数据XML中，md:EntityDescriptor元素的entityID属性值。
 * ACS URL：下载的元数据XML中，md:AssertionConsumerService元素的Location属性值。
-* RelayState（可选）：如果您的IdP支持设置RelayState参数，您可以将其配置成SSO登录成功后希望跳转到的页面URL。如果不进行配置，SSO登录成功后，将会跳转到UCloud 控制台首页。
+
 
 
