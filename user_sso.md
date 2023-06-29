@@ -15,7 +15,7 @@
 ### UCloud SP的SAML配置
 ####  操作步骤
 打开访问控制——SSO管理，此功能默认为关闭，此时UCloud用户可以使用密码登录，所有SSO设置不生效。
-<img width="912" alt="企业微信截图_b6b859c1-d3cf-4073-a555-711b89c71d98" src="(https://github-production-user-asset-6210df.s3.amazonaws.com/107971405/249724207-d4ebc7ca-f4be-4a31-b958-961a4003d69f.png)">
+<img width="912" alt="企业微信截图_b6b859c1-d3cf-4073-a555-711b89c71d98" src="https://github.com/UCloudDoc-Team/uproject/assets/107971405/325f13d3-6639-45a6-bc42-ec6dc6c43067">
 
 如果选择开启此功能，此时子用户密码登录方式将会被关闭，统一跳转到企业IdP登录服务进行身份认证。如果再次关闭，用户密码登录方式自动恢复。  
 元数据文档：单击上传文件，上传企业IdP提供的元数据文档。  
@@ -28,7 +28,8 @@
 
 ####  后续步骤
 完成SAML配置后，创建与企业IdP相匹配的IAM用户，用户管理-邀请子用户，填写用户名，无需邮箱，系统会为该子用户生成虚拟邮箱，邀请成功后即激活状态。
-<img width="882" alt="image" src="[https://github.com/UCloudDoc-Team/uproject/assets/107971405/73191284-5c07-473c-8d8c-004eab740d19.png](https://github-production-user-asset-6210df.s3.amazonaws.com/107971405/249400223-73191284-5c07-473c-8d8c-004eab740d19.png)">  
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/107971405/249726976-ee84346a-e1bd-4021-89e3-f9dc38ddb09d.png)
+
 注：关闭SSO功能后，需要将开启SSO功能期间创建的子用户开启控制台访问能力。便于关闭SSO功能后子账号可以使用账号邮箱登录等功能。
 <img width="633" alt="image" src="[https://github.com/UCloudDoc-Team/uproject/assets/107971405/1b974345-7f1e-42a5-b2d2-5a0f70e9b501.png](https://github-production-user-asset-6210df.s3.amazonaws.com/107971405/249686527-1b974345-7f1e-42a5-b2d2-5a0f70e9b501.png)">  
 
