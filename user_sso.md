@@ -15,8 +15,7 @@
 ### UCloud SP的SAML配置
 ####  操作步骤
 打开访问控制——SSO管理，此功能默认为关闭，此时UCloud用户可以使用密码登录，所有SSO设置不生效。
-
-
+<img width="912" alt="企业微信截图_b6b859c1-d3cf-4073-a555-711b89c71d98" src="[https://github.com/UCloudDoc-Team/uproject/assets/107971405/d4ebc7ca-f4be-4a31-b958-961a4003d69f](https://github-production-user-asset-6210df.s3.amazonaws.com/107971405/249724207-d4ebc7ca-f4be-4a31-b958-961a4003d69f.png)">
 
 如果选择开启此功能，此时子用户密码登录方式将会被关闭，统一跳转到企业IdP登录服务进行身份认证。如果再次关闭，用户密码登录方式自动恢复。  
 元数据文档：单击上传文件，上传企业IdP提供的元数据文档。  
@@ -29,16 +28,16 @@
 
 ####  后续步骤
 完成SAML配置后，创建与企业IdP相匹配的IAM用户，用户管理-邀请子用户，填写用户名，无需邮箱，系统会为该子用户生成虚拟邮箱，邀请成功后即激活状态。
-<img width="882" alt="image" src="https://github.com/UCloudDoc-Team/uproject/assets/107971405/73191284-5c07-473c-8d8c-004eab740d19.png">  
+<img width="882" alt="image" src="[https://github.com/UCloudDoc-Team/uproject/assets/107971405/73191284-5c07-473c-8d8c-004eab740d19.png](https://github-production-user-asset-6210df.s3.amazonaws.com/107971405/249400223-73191284-5c07-473c-8d8c-004eab740d19.png)">  
 注：关闭SSO功能后，需要将开启SSO功能期间创建的子用户开启控制台访问能力。便于关闭SSO功能后子账号可以使用账号邮箱登录等功能。
-<img width="633" alt="image" src="https://github.com/UCloudDoc-Team/uproject/assets/107971405/1b974345-7f1e-42a5-b2d2-5a0f70e9b501.png">  
+<img width="633" alt="image" src="[https://github.com/UCloudDoc-Team/uproject/assets/107971405/1b974345-7f1e-42a5-b2d2-5a0f70e9b501.png](https://github-production-user-asset-6210df.s3.amazonaws.com/107971405/249686527-1b974345-7f1e-42a5-b2d2-5a0f70e9b501.png)">  
 
-<img width="1147" alt="image" src="https://github.com/UCloudDoc-Team/uproject/assets/107971405/a04cd603-83ac-4d94-8fb4-d83094112500.png">
+<img width="1147" alt="image" src="[https://github.com/UCloudDoc-Team/uproject/assets/107971405/a04cd603-83ac-4d94-8fb4-d83094112500.png](https://github-production-user-asset-6210df.s3.amazonaws.com/107971405/249686426-a04cd603-83ac-4d94-8fb4-d83094112500.png)">
 
 
 ##### 企业IdP的SAML配置
 从UCloud获取SAML服务提供商元数据URL。  
-![image](https://github.com/UCloudDoc-Team/uproject/assets/107971405/85a0c150-bf44-4729-b0f2-36c8203c0e60.png)
+![image]((https://github-production-user-asset-6210df.s3.amazonaws.com/107971405/249441325-85a0c150-bf44-4729-b0f2-36c8203c0e60.png))
 在企业IdP中创建一个SAML SP，并根据实际情况选择下面任意一种方式配置UCloud 为信赖方。
 直接使用步骤1所述的UCloud元数据URL进行配置。
 如果您的IdP不支持URL配置，您可以通过步骤1所述URL下载元数据文件并上传至您的IdP。
