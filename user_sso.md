@@ -20,7 +20,7 @@
 如果选择开启此功能，此时子用户密码登录方式将会被关闭，统一跳转到企业IdP登录服务进行身份认证。如果再次关闭，用户密码登录方式自动恢复。  
 元数据文档：单击上传文件，上传企业IdP提供的元数据文档。  
 说明：元数据文档由企业IdP提供，一般为XML格式，包含IdP的登录服务地址以及X.509公钥证书（用于验证IdP所颁发的SAML断言的有效性）。  
-单击开启，上传元数据文件。   
+单击开启，上传元数据文件。
 
 ![image](https://github.com/UCloudDoc-Team/uproject/assets/107971405/cfbfb947-a20e-4a57-ab98-7a2402ec3644)
 
@@ -49,16 +49,17 @@
 
 #### SAML响应
 请确保您的IdP向UCloud发出符合如下要求的SAML响应，每一个元素都必须要有，否则SSO将会失败。
-```<saml2p:Response>
+```
+<saml2p:Response>
     <saml2:Issuer>...</saml2:Issuer>
+    <ds:Signature>
+        ...
+    </ds:Signature>
     <saml2p:Status>
         ...
     </saml2p:Status>
     <saml2:Assertion>
         <saml2:Issuer>...</saml2:Issuer>
-        <ds:Signature>
-            ...
-        </ds:Signature>
         <saml2:Subject>
             <saml2:NameID>${NameID}</saml2:NameID>
             <saml2:SubjectConfirmation>
@@ -78,36 +79,36 @@
  ```
 #### SAML断言中的元素说明
 * SAML 2.0协议的通用元素
-  
-|  元素   | 说明  |
-|  ----  | ----  |
-| Issuer  | Issuer的值必须与您在UCloud用户SSO设置中上传的元数据文件中的EntityID匹配。 |
-| Signature  | UCloud要求SAML断言必须被签名以确保没有篡改，Signature及其包含的元素必须包含签名值、签名算法等信息。 |
-|  Subject  | Subject必须包含以下元素：有且仅有一个NameID元素，是UCloud账号下的某个IAM子用户用户的身份标识。详情请参见本文下面所述的NameID元素和NameID示例。有且仅有一个SubjectConfirmation元素，其中包含一个SubjectConfirmationData元素。SubjectConfirmationData必须有以下两个属性：NotOnOrAfter：规定SAML断言的有效期。Recipient：UCloud通过检查该元素的值来确保UCloud是该断言的目标接收方，其取值必须为https://signin.aliyun.com/saml/SSO  。
-| Conditions  | 在Conditions元素中，必须包含一个AudienceRestriction元素，其中可包含一至多个Audience元素，但必须有一个Audience元素的取值为 https://signin.aliyun.com/${accountId}/saml/SSO ，${accountId}为UCloud账号ID。 |
+
+|  元素   | 说明                                                                                                                                                                                                                                                                                                     |
+|  ----  |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Issuer  | Issuer的值必须与您在UCloud用户SSO设置中上传的元数据文件中的EntityID匹配。                                                                                                                                                                                                                                                       |
+| Signature  | UCloud要求SAML断言必须被签名以确保没有篡改，Signature及其包含的元素必须包含签名值、签名算法等信息。                                                                                                                                                                                                                                            |
+|  Subject  | Subject必须包含以下元素：有且仅有一个NameID元素，是UCloud账号下的某个IAM子用户用户的身份标识。详情请参见本文下面所述的NameID元素和NameID示例。有且仅有一个SubjectConfirmation元素，其中包含一个SubjectConfirmationData元素。SubjectConfirmationData必须有以下两个属性：NotOnOrAfter：规定SAML断言的有效期。Recipient：UCloud通过检查该元素的值来确保UCloud是该断言的目标接收方，其取值必须为https://signin.ucloud.cn/saml/SSO  。 
+| Conditions  | 在Conditions元素中，必须包含一个AudienceRestriction元素，其中可包含一至多个Audience元素，但必须有一个Audience元素的取值为 https://signin.ucloud.cn/${CompanyID}/saml/SSO ，${CompanyID}为UCloud公司ID。                                                                                                                                           |
 
 以下是一个Subject元素的示例：
-```<Subject>
-  <NameID Format="urn:oasis:names:tc:SAML:2.0:nameid-format:persistent">Alice@example.onaliyun.com</NameID>        
+```
+<Subject>
+  <NameID Format="urn:oasis:names:tc:SAML:2.0:nameid-format:persistent">Alice</NameID>        
   <SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">   
-    <SubjectConfirmationData NotOnOrAfter="2019-01-01T00:01:00.000Z" Recipient="https://signin.aliyun.com/saml/SSO"/>    
+    <SubjectConfirmationData NotOnOrAfter="2019-01-01T00:01:00.000Z" Recipient="https://signin.ucloud.cn/saml/SSO"/>    
   </SubjectConfirmation>
 </Subject>|
 ```
 
 以下是一个Conditions元素的示例：
-```<Conditions>
+```
+<Conditions>
   <AudienceRestriction>
-    <Audience>https://signin.aliyun.com/${accountId}/saml/SSO</Audience>
+    <Audience>https://signin.ucloud.cn/${CompanyID}/saml/SSO</Audience>
   </AudienceRestriction>
 </Conditions>
 ```
 
 * NameID元素
-UCloud需要通过UPN（User Principal Name）来定位一个IAM子用户，所以要求企业IdP生成的SAML断言包含用户的UPN。UCloud通过解析SAML断言中的NameID元素，来匹配IAM子用户的UPN从而实现用户SSO。
 
-因此，在配置IdP颁发的SAML断言时，需要将对应于IAM子用户用户UPN的字段映射为SAML断言中的NameID元素。
+UCloud需要通过CompanyID+用户名来定位一个IAM子用户，所以要求企业IdP生成的SAML断言包含子用户的用户名。UCloud通过解析SAML断言中的NameID元素，来匹配IAM子用户的用户名从而实现用户SSO。
 
-IAM子用户名为test，默认域名为example.onaliyun.com。
-
+因此，在配置IdP颁发的SAML断言时，需要将对应于IAM子用户用户名的字段映射为SAML断言中的NameID元素。
 
