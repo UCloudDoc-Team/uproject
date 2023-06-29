@@ -31,7 +31,7 @@
 ![image](images/sso3.png)
 
 注：关闭SSO功能后，需要将开启SSO功能期间创建的子用户开启控制台访问能力。便于关闭SSO功能后子账号可以使用账号邮箱登录等功能。
-![image](images/sso4.png)
+![image](images/sso7.png)
 ![image](images/sso5.png)
 
 
