@@ -15,7 +15,7 @@
 ### UCloud SP的SAML配置
 ####  操作步骤
 打开访问控制——SSO管理，此功能默认为关闭，此时UCloud用户可以使用密码登录，所有SSO设置不生效。
-<img width="912" alt="企业微信截图_b6b859c1-d3cf-4073-a555-711b89c71d98" src="https://github.com/UCloudDoc-Team/uproject/assets/107971405/d1117f40-a640-4efc-9584-7c822ae926ea.png">
+<img width="912" alt="企业微信截图_b6b859c1-d3cf-4073-a555-711b89c71d98" src="https://github.com/UCloudDoc-Team/uproject/assets/107971405/d1117f40-a640-4efc-9584-7c822ae926ea">
 
 
 如果选择开启此功能，此时子用户密码登录方式将会被关闭，统一跳转到企业IdP登录服务进行身份认证。如果再次关闭，用户密码登录方式自动恢复。  
