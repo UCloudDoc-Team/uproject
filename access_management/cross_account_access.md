@@ -16,35 +16,38 @@
 
 ## 操作步骤 — 授信
   ![](/images/workflow.png)
-1. 访问方获取授信码
-  - 使用主账号登录控制台，进入 "访问控制 >> 授信管理"，查看“我被授信”
-  ![](/images/management1.png)
-
  
-2. 创建授信
+1. 创建授信
   - 使用主账号登录控制台，进入 "访问控制 >> 授信管理"，创建授信
-  - 填写访问方账号
-  - 填写访问方提供的授信码
-  - 选择角色
-  - 指定可访问的项目范围 
-  
-  ![](/images/token2.png)
-3. 访问方指定角色扮演者 
-  - 使用主账号登录控制台，进入 "权限管理 >> 授信管理"
+  - 填写需要授信的主账号
+  - 指定可访问的项目 
+  - 选择授信策略
+ <img width="1166" alt="image" src="https://github.com/user-attachments/assets/3e15933c-4ac1-424f-a29a-38fbf6e2f909">
+
+2. 访问方指定角色扮演者 
+  - 被授信的主账号登录控制台，进入 "访问控制 >> 授信管理"
   - 添加子账号至您需要访问的对象关系中
-  ![](/images/addaccount.png)
-4. 访问授信方的资源
+<img width="1039" alt="image" src="https://github.com/user-attachments/assets/80ce6e09-3465-44af-80c6-e6dbf0f727d5">
+
+
+3. 访问授信方的资源
   - 使用子账号登录控制台
   - 切换身份至您要访问的对象
-  ![](/images/switchicon.png)
-  ![](/images/switch.png)
+ ![image](https://github.com/user-attachments/assets/0ace119d-7553-4d80-bb35-3c0181ac7fcc)
+
   
  ## 操作步骤 — 更换访问人
-  - 使用主账号登录控制台，进入 "权限管理 >> 授信管理"
-  - 更换子账号
-  ![](/images/addaccount.png)
+  - 被授信的主账号登录控制台，进入 "访问控制 >> 授信管理 >>  我被授信"
+  - 添加子账号操作更换访问人
+![image](https://github.com/user-attachments/assets/b3f53635-3df7-46ee-8028-6e1996786c85)
+
  
  ## 操作步骤 — 解除授信
-  - 使用主账号登录控制台，进入 "权限管理 >> 授信管理"
+  - 使用主账号登录控制台，进入 "访问控制 >> 授信管理"，查看“我已授信”
   - 点击 “解除授信"
-  ![](/images/cancel.png)
+<img width="1171" alt="image" src="https://github.com/user-attachments/assets/88962171-a18d-4de3-8eda-00d3570f9428">
+
+
+## 操作步骤 — 查看被授信信息
+  - 使用主账号登录控制台，进入 "访问控制 >> 授信管理"，查看“我被授信”
+  ![](/images/management1.png)
