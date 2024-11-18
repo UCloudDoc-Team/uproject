@@ -44,6 +44,6 @@ UCloud 提供两种模式的权限策略：
 
 ### 为子用户授权
 
-授权时需要区分全局级 / 项目级授权，选择项目级，需要对应选择该账号下的部分项目。
-![用户授权](/images/policy/attach_policy_to_user_1.png)
-![用户授权](/images/policy/attach_policy_to_user_2.png)
+授权时需要区分全局级 / 项目级授权，已选策略中包含项目级策略，需要对应选择该账号下的部分项目/全部项目，已选策略中仅含全局级策略则无需选择应用范围（应用范围为全局）
+![image](https://github.com/user-attachments/assets/d862202d-d195-4ba8-bd5d-0e67b0d77a09)
+
