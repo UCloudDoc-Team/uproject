@@ -32,19 +32,28 @@
 ![](/images/policy/子账号添加sts权限.png)
 
 
-4. 使用方调用STS生成临时安全密钥
-STS获取扮演角色的临时身份凭证 - AssumeRole API说明文档可查看：https://docs.ucloud.cn/api/sts-api/assume_role。
-需要拿到以下三个信息：
+4. 使用方通过子账号调用STS服务AssumeRole接口生成临时安全密钥
+> 注解：STS获取扮演角色的临时身份凭证 API说明文档可查看：https://docs.ucloud.cn/api/sts-api/assume_role。
+
+调用接口获取到以下三个信息，进行步骤5：
    - SecurityToken：安全令牌
    - AccessKeyId：密钥ID
    - AccessKeySecret：密钥Secret
 ![](/images/policy/sts接口说明.png)
   
 
-6. 使用步骤4生成的临时安全密钥扮演账号 A 授权的角色，在角色的权限范围内可以通过以下方式中的任意一种，调用您需要的接口管理UCloud资源：
-   - 多语言 OpenSDK / Go / Python /
-   - UAPI 浏览器
+5. 使用步骤4生成的临时安全密钥扮演账号 A 授权的角色，在角色的权限范围内可以通过以下方式中的任意一种，调用您需要的接口管理UCloud资源：
+
    - CloudShell 云命令行
+   - 多语言 OpenSDK / Go / Python /
+
+CloudShell示例
+```
+ucloud api  --Action AssumeRole  --RoleUrn ucs:iam::xxxx:role/test  --RoleSessionName test-session
+```
+
+
+
   
 SDK示例
 ```
