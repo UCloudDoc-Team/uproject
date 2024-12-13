@@ -20,7 +20,7 @@
 2. 授信方在角色的信任策略内添加访问方
 
    - 点击对应角色的“详情”按钮，选择“信任策略”，点击“编辑策略”
-   - 添加访问方的账号即Company ID至“Principal“内，点击确定
+   - 在“Principal“处输入“ucs:iam::xxxxxxx:root”，xxxxxxx为访问方的账号即Company ID，点击确定
 ![](/images/policy/角色添加信任策略.png)
 
 
