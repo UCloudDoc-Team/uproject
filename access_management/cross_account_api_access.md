@@ -47,6 +47,68 @@ STS获取扮演角色的临时身份凭证 - AssumeRole API说明文档可查看
    - CloudShell 云命令行
   
 SDK示例
+```
+package main
+
+import (
+	"fmt"
+	"os"
+
+	"github.com/ucloud/ucloud-sdk-go/services/sts"
+	"github.com/ucloud/ucloud-sdk-go/services/uhost"
+	"github.com/ucloud/ucloud-sdk-go/ucloud"
+	"github.com/ucloud/ucloud-sdk-go/ucloud/auth"
+	"github.com/ucloud/ucloud-sdk-go/ucloud/log"
+	"github.com/ucloud/ucloud-sdk-go/ucloud/request"
+)
+
+// loadConfig load ucloud config and credential
+func loadConfig() (*ucloud.Config, *auth.Credential) {
+	cfg := ucloud.NewConfig()
+	cfg.LogLevel = log.DebugLevel
+
+	credential := auth.NewCredential()
+	credential.PrivateKey = os.Getenv("UCLOUD_PRIVATE_KEY")
+	credential.PublicKey = os.Getenv("UCLOUD_PUBLIC_KEY")
+
+	log.Info("setup clients ...")
+
+	return &cfg, &credential
+}
+
+func main() {
+	// get sts credential
+	cfg, credential := loadConfig()
+	stsClient := sts.NewClient(cfg, credential)
+	var assumeRoleRequest sts.AssumeRoleRequest
+	assumeRoleRequest.RoleUrn = ucloud.String("ucs:iam::xxxx:role/test")
+	assumeRoleRequest.RoleSessionName = ucloud.String("test-session")
+	assumeRoleResponse, err := stsClient.AssumeRole(&assumeRoleRequest)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(assumeRoleResponse.Credentials.AccessKeyId)
+	// the token from AssumeRole has an expiration time
+	fmt.Println(assumeRoleResponse.Credentials.Expiration)
+	cred := &auth.Credential{
+		PublicKey:     assumeRoleResponse.Credentials.AccessKeyId,
+		PrivateKey:    assumeRoleResponse.Credentials.AccessKeySecret,
+		SecurityToken: assumeRoleResponse.Credentials.SecurityToken,
+	}
+	// invoke uhost client with the sts credential
+	uhostClient := uhost.NewClient(cfg, cred)
+	cfg.ProjectId = os.Getenv("UCLOUD_PROJECT_ID")
+	cfg.Region = "cn-bj2"
+	req := &uhost.DescribeUHostInstanceRequest{}
+	req.SetEncoder(request.NewJSONEncoder(cfg, cred))
+	resp, err := uhostClient.DescribeUHostInstance(&uhost.DescribeUHostInstanceRequest{})
+	if err != nil {
+		log.Errorf("error: %v", err)
+	} else {
+		log.Infof("response: %+v", resp)
+	}
+}
+
 
 
 
