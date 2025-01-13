@@ -20,7 +20,13 @@
 1. 创建授信
   - 使用主账号登录控制台，进入 "访问控制 >> 授信管理"，创建授信
   - 填写需要授信的主账号
-  - 指定可访问的项目 
+  - 指定可访问的项目
+    - 若想为主账号授权“项目级策略”，可指定具体的授权项目。(可在“策略管理”中查看策略级别)
+![image](https://github.com/user-attachments/assets/21a45dad-0624-4040-bd30-47b996311938)
+注意：【应用项目】将优先显示已授信“项目级策略”的项目。
+    - 若想为主账号授权“全局级策略”，请选择“不分项目”。(可在“策略管理“中查看策略级别)
+![image](https://github.com/user-attachments/assets/b0f23771-f73f-40d5-a0d2-e6c30ad8a7c1)
+
   - 选择授信策略
  <img width="1166" alt="image" src="https://github.com/user-attachments/assets/3e15933c-4ac1-424f-a29a-38fbf6e2f909">
 
