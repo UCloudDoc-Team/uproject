@@ -24,6 +24,8 @@
     - 若想为主账号授权“项目级策略”，可指定具体的授权项目。(可在“策略管理”中查看策略级别)
 ![image](https://github.com/user-attachments/assets/21a45dad-0624-4040-bd30-47b996311938)
 注意：【应用项目】将优先显示已授信“项目级策略”的项目。
+![image](https://github.com/user-attachments/assets/467cb892-e18e-4344-a457-683ca3d233c1)
+
     - 若想为主账号授权“全局级策略”，请选择“不分项目”。(可在“策略管理“中查看策略级别)
 ![image](https://github.com/user-attachments/assets/b0f23771-f73f-40d5-a0d2-e6c30ad8a7c1)
 
