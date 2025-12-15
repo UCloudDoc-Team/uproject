@@ -34,7 +34,7 @@
 
 
 4. 使用方通过子账号调用STS服务AssumeRole接口生成临时安全密钥
-> 注解：STS获取扮演角色的临时身份凭证 API说明文档可查看：https://docs.ucloud.cn/api/sts-api/assume_role。
+> 注解：STS获取扮演角色的临时身份凭证 API说明文档可查看：https://docs.ucloud.cn/api/sts-api/assume_role
 
 调用接口获取到以下三个信息，进行步骤5：
    - SecurityToken：安全令牌
