@@ -8,13 +8,15 @@
 - 不支持独立计费，子用户产生的消费都通过主账号结算；
 - 子用户删除，不影响其创建的资源；
 
-![](/images/user/user_mainpage.png)
+<img width="1854" height="521" alt="image" src="https://github.com/user-attachments/assets/406f89cd-55d6-4ad7-baa6-e8160251310c" />
 
 
 ### 创建子用户
 
-子用户通过邮箱登录，用户名是子用户在该云服务账号下的唯一标识。
-![](/images/user/user_create.png)
+子用户通过CompanyID+用户名登录，用户名是子用户在该云服务账号下的唯一标识。
+<img width="709" height="631" alt="image" src="https://github.com/user-attachments/assets/e8753795-2213-4d1f-bdf2-fdc1eed594ac" />
+
+
 
 ### 为子用户添加权限
 
@@ -36,6 +38,7 @@
 子用户被冻结后将无法登录，解冻后恢复。子用户注销不可逆。子用户的任何变化都不影响云服务账号下的资源使用。
 ![](/images/user/user_freezing_delete.png)
 
-### 查看子用户详情
-通过详情页管理子用户的具体权限和组信息。注意子用户不可以管理其所在组的资源权限。
-![](/images/user/user_more_info.png)
+### 管理子用户基本信息
+通过详情页管理子用户的具体权限和组信息。拥有访问控制权限的账号可以在详情页修改子账号的安全邮箱与手机号。
+<img width="1615" height="910" alt="image" src="https://github.com/user-attachments/assets/920ddbb2-f4e8-4bd3-a243-8ac69d9cfa66" />
+
