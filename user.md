@@ -8,14 +8,12 @@
 - 不支持独立计费，子用户产生的消费都通过主账号结算；
 - 子用户删除，不影响其创建的资源；
 
-<img width="1854" height="521" alt="image" src="https://github.com/user-attachments/assets/406f89cd-55d6-4ad7-baa6-e8160251310c" />
-
+![](/images/user1.png)
 
 ### 创建子用户
 
 子用户通过CompanyID+用户名登录，用户名是子用户在该云服务账号下的唯一标识。
-<img width="709" height="631" alt="image" src="https://github.com/user-attachments/assets/e8753795-2213-4d1f-bdf2-fdc1eed594ac" />
-
+![](/images/addacccount.png)
 
 
 ### 为子用户添加权限
