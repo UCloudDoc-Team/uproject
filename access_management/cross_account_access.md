@@ -35,7 +35,7 @@
 2. 访问方指定角色扮演者 
   - 被授信的主账号登录控制台，进入 "访问控制 >> 授信管理"
   - 添加子账号至您需要访问的对象关系中
-<img width="1039" alt="image" src="https://github.com/user-attachments/assets/80ce6e09-3465-44af-80c6-e6dbf0f727d5">
+![image]()
 
 
 3. 访问授信方的资源
@@ -47,7 +47,7 @@
  ## 操作步骤 — 更换访问人
   - 被授信的主账号登录控制台，进入 "访问控制 >> 授信管理 >>  我被授信"
   - 添加子账号操作更换访问人
-![image](https://github.com/user-attachments/assets/b3f53635-3df7-46ee-8028-6e1996786c85)
+![image]()
 
  
  ## 操作步骤 — 解除授信
